@@ -1,9 +1,9 @@
-import {BskyAgent} from '@atproto/api'
+import {type BskyAgent} from '@atproto/api'
 
-import {ResolvedLink, resolveGif, resolveLink} from '#/lib/api/resolve'
+import {type ResolvedLink, resolveGif, resolveLink} from '#/lib/api/resolve'
 import {STALE} from '#/state/queries/index'
 import {useAgent} from '../session'
-import {Gif} from './tenor'
+import {type Gif} from './tenor'
 import {
   fetchQueryWithFallback,
   type QueryClient,
