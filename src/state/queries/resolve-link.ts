@@ -1,18 +1,20 @@
-import {fetchQueryWithFallback, type QueryClient, useQuery} from './useQueryWithFallback'
+import {BskyAgent} from '@atproto/api'
 
+import {ResolvedLink, resolveGif, resolveLink} from '#/lib/api/resolve'
 import {STALE} from '#/state/queries/index'
 import {useAgent} from '../session'
+import {Gif} from './tenor'
+import {
+  fetchQueryWithFallback,
+  type QueryClient,
+  useQuery,
+} from './useQueryWithFallback'
 
 const RQKEY_LINK_ROOT = 'resolve-link'
 export const RQKEY_LINK = (url: string) => [RQKEY_LINK_ROOT, url]
 
 const RQKEY_GIF_ROOT = 'resolve-gif'
 export const RQKEY_GIF = (url: string) => [RQKEY_GIF_ROOT, url]
-
-import {BskyAgent} from '@atproto/api'
-
-import {ResolvedLink, resolveGif, resolveLink} from '#/lib/api/resolve'
-import {Gif} from './tenor'
 
 export function useResolveLinkQuery(url: string) {
   const agent = useAgent()

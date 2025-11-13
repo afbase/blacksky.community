@@ -10,12 +10,6 @@ import {
   type ModerationDecision,
   type ModerationPrefs,
 } from '@atproto/api'
-import {
-  type InfiniteData,
-  type QueryClient,
-  type QueryKey,
-  useInfiniteQuery,
-} from './useQueryWithFallback'
 
 import {AuthorFeedAPI} from '#/lib/api/feed/author'
 import {CustomFeedAPI} from '#/lib/api/feed/custom'
@@ -46,6 +40,12 @@ import {
   embedViewRecordToPostView,
   getEmbeddedPost,
 } from './util'
+import {
+  type InfiniteData,
+  type QueryClient,
+  type QueryKey,
+  useInfiniteQuery,
+} from './useQueryWithFallback'
 
 type ActorDid = string
 export type AuthorFilter =

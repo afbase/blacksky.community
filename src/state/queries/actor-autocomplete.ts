@@ -1,6 +1,5 @@
 import React from 'react'
 import {AppBskyActorDefs, moderateProfile, ModerationOpts} from '@atproto/api'
-import {fetchQueryWithFallback, keepPreviousData, useQuery, useQueryClient} from './useQueryWithFallback'
 
 import {isJustAMute, moduiContainsHideableOffense} from '#/lib/moderation'
 import {logger} from '#/logger'
@@ -8,6 +7,12 @@ import {STALE} from '#/state/queries'
 import {useAgent} from '#/state/session'
 import {useModerationOpts} from '../preferences/moderation-opts'
 import {DEFAULT_LOGGED_OUT_PREFERENCES} from './preferences'
+import {
+  fetchQueryWithFallback,
+  keepPreviousData,
+  useQuery,
+  useQueryClient,
+} from './useQueryWithFallback'
 
 const DEFAULT_MOD_OPTS = {
   userDid: undefined,

@@ -1,5 +1,4 @@
 import {useCallback, useMemo, useState} from 'react'
-import {useQuery, useQueryClient} from '../useQueryWithFallback'
 
 import {isWeb} from '#/platform/detection'
 import {useModerationOpts} from '#/state/preferences/moderation-opts'
@@ -30,6 +29,7 @@ import * as views from '#/state/queries/usePostThread/views'
 import {useAgent, useSession} from '#/state/session'
 import {useMergeThreadgateHiddenReplies} from '#/state/threadgate-hidden-replies'
 import {useBreakpoints} from '#/alf'
+import {useQuery, useQueryClient} from '../useQueryWithFallback'
 
 export * from '#/state/queries/usePostThread/types'
 

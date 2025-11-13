@@ -1,6 +1,5 @@
 import {useCallback} from 'react'
 import {type AppBskyActorDefs, type AppBskyFeedDefs, AtUri} from '@atproto/api'
-import {fetchQueryWithFallback, useMutation, useQuery, useQueryClient} from './useQueryWithFallback'
 
 import {useToggleMutationQueue} from '#/lib/hooks/useToggleMutationQueue'
 import {type LogEvents, toClout} from '#/lib/statsig/statsig'
@@ -11,6 +10,12 @@ import {useAgent, useSession} from '#/state/session'
 import * as userActionHistory from '#/state/userActionHistory'
 import {useIsThreadMuted, useSetThreadMute} from '../cache/thread-mutes'
 import {findProfileQueryData} from './profile'
+import {
+  fetchQueryWithFallback,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from './useQueryWithFallback'
 
 const RQKEY_ROOT = 'post'
 export const RQKEY = (postUri: string) => [RQKEY_ROOT, postUri]
